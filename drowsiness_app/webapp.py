@@ -1,7 +1,7 @@
 from drowsiness_detection import DrowsinessEyeYawn
 from imutils.video import VideoStream
 from flask import Response
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask import render_template
 import threading
 import argparse
@@ -14,6 +14,8 @@ import dlib
 
 outputFrame = None
 lock = threading.Lock()
+detection = False
+vs = VideoStream(src=0).start()
 
 # getting the classifiers
 detector = dlib.get_frontal_face_detector()
@@ -22,8 +24,6 @@ predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 # initialize a flask object
 app = Flask(__name__)
 
-vs = VideoStream(src=0).start()
-
 
 @app.route("/")
 def index():
@@ -31,43 +31,51 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/start", methods=['GET', 'POST', 'DELETE'])
+def start():
+    global detection
+    detection = True
+    return render_template("start.html")
+
+
 def detect():
-    global vs, outputFrame, lock
+    global vs, outputFrame, lock, detection
     obj = DrowsinessEyeYawn()
     eye_closure_count = 0
     yawn_duration_count = 0
     while True:
-        image = vs.read()
-        image = imutils.resize(image, width=500)
+        if detection is True:
+            image = vs.read()
+            image = imutils.resize(image, width=500)
 
-        # grab the current timestamp and draw it on the frame
-        timestamp = datetime.datetime.now()
-        cv.putText(image, timestamp.strftime("%A %d %B %Y %I:%M:%S%p"), (10, image.shape[0] - 10),
-                   cv.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
+            # grab the current timestamp and draw it on the frame
+            timestamp = datetime.datetime.now()
+            cv.putText(image, timestamp.strftime("%A %d %B %Y %I:%M:%S%p"), (10, image.shape[0] - 10),
+                       cv.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
 
-        gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-        rects = detector(gray, 1)
-        for (i, rect) in enumerate(rects):
-            shape = obj.detect_shape(gray, rect, predictor)
-            (x, y, w, h) = face_utils.rect_to_bb(rect)
-            cv.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 3)
-            cv.putText(image, "Face No. {}".format(i + 1), (x - 10, y - 10), cv.FONT_HERSHEY_COMPLEX, 0.5, (255, 0, 0),
-                       2)
-            net_eye_ratio = obj.calculate_net_eye_ratio(shape[36:42], shape[42:48])
-            net_mouth_ratio = obj.calculate_net_mouth_ratio(shape[60:68])
-            if net_eye_ratio < 0.25:
-                eye_closure_count += 1
-            else:
-                eye_closure_count = 0
-            if net_mouth_ratio > 0.35:
-                yawn_duration_count += 1
-            else:
-                yawn_duration_count = 0
-            if (eye_closure_count >= 40) | (yawn_duration_count > 7):
-                obj.playalarm(image)
+            gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
+            rects = detector(gray, 1)
+            for (i, rect) in enumerate(rects):
+                shape = obj.detect_shape(gray, rect, predictor)
+                (x, y, w, h) = face_utils.rect_to_bb(rect)
+                cv.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 3)
+                cv.putText(image, "Face No. {}".format(i + 1), (x - 10, y - 10), cv.FONT_HERSHEY_COMPLEX, 0.5, (255, 0, 0),
+                           2)
+                net_eye_ratio = obj.calculate_net_eye_ratio(shape[36:42], shape[42:48])
+                net_mouth_ratio = obj.calculate_net_mouth_ratio(shape[60:68])
+                if net_eye_ratio < 0.25:
+                    eye_closure_count += 1
+                else:
+                    eye_closure_count = 0
+                if net_mouth_ratio > 0.35:
+                    yawn_duration_count += 1
+                else:
+                    yawn_duration_count = 0
+                if (eye_closure_count >= 40) | (yawn_duration_count > 7):
+                    obj.playalarm(image)
 
-        with lock:
-            outputFrame = image.copy()
+            with lock:
+                outputFrame = image.copy()
 
 
 def generate():
@@ -101,20 +109,19 @@ def video_feed():
     return Response(generate(), mimetype="multipart/x-mixed-replace; boundary=frame")
 
 
-if __name__ == '__main__':
-    # construct the argument parser and parse command line arguments
-    ap = argparse.ArgumentParser()
-    ap.add_argument("-i", "--ip", type=str, required=True, help="ip address of the device")
-    ap.add_argument("-o", "--port", type=int, required=True, help="ephemeral port number of the server (1024 to 65535)")
-    args = vars(ap.parse_args())
+@app.route("/start/stop")
+def stop():
+    global detection
+    detection = False
+    return redirect(url_for('index'))
 
-    # start a thread that will perform motion detection
+
+if __name__ == '__main__':
+    # start a thread that will perform drowsiness detection
     t = threading.Thread(target=detect)
     t.daemon = True
     t.start()
-
     # start the flask app
-    app.run(host=args["ip"], port=args["port"], debug=True, threaded=True, use_reloader=False)
+    app.run(debug=True, threaded=True, use_reloader=False)
 
-# release the video stream pointer
 vs.stop()

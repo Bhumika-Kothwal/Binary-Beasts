@@ -37,7 +37,7 @@ class DrowsinessEyeYawn:
         return mouth_ratio
 
     def playalarm(self, image):
-        cv.putText(image, "Are you drowsy??", (10, image.shape[0] - 40), cv.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 3)
+        # cv.putText(image, "Are you drowsy??", (10, image.shape[0] - 40), cv.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 3)
         filename = 'alarm.wav'
         data, fs = sf.read(filename, dtype='float32')
         sd.play(data, fs)
