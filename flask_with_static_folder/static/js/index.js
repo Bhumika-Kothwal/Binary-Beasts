@@ -32,6 +32,9 @@ video.addEventListener('play', () =>
     var play_check = socket.emit( 'my event', {data: detections})
     if(play_check === "PLAY")
     {
+        var sound = new Audio();
+        sound.src = 'song.mp3';
+        sound.play();
         console.log("INSIDE IF CONDITION")
     }
     const resizedDetections = faceapi.resizeResults(detections, displaySize);
