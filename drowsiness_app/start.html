@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% block title %}Live Video Streaming{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<h1>Live Video Streaming</h1>
+<p class="important">
+    Welcome to our Driver Drowsiness Detection Application.</p>
+{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Driver Drowsiness Detection</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type=text/javascript>
+            $(function () {
+                $("#mybutton").click(function (event) {
+                    $.getJSON('/start/stop', {}, function (data) { });
+                    return false;
+                }
+                );
+            }
+            );
+
+        </script>
+    </head>
+    <body>
+        <h1>Live Video Streaming</h1>
+        <img src="{{ url_for('video_feed') }}">
+        <br> <br> <br>
+        <input type="button" id="mybutton" style="color:red" onclick="location.href='http://127.0.0.1:5000/';" value="STOP" />
+    </body>
+</html>
