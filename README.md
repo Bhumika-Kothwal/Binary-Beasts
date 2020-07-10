@@ -27,7 +27,7 @@ Don't forget to replace the link here with **_your own Github repository_** link
 
 Along with this, add the link of the drive folder that contains the app APK/Screenshots/Screen Recordings. If you have hosted your project on the web, add that link as well.
 
-* GitHub repo link: [Link to repository](https://github.com/your-repo-link)
+* GitHub repo link:https://github.com/Bhumika-Kothwal/Binary-Beasts
 * Drive link: [Drive link here](https://drive.google.com/)
 * Website link: [Website link here](www.google.com)
 
