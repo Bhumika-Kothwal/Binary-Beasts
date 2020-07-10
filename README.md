@@ -34,9 +34,32 @@ is taken as input and with the help of some  eucledian mathematics , algorithims
 
 > It can also be used by students to keep themselves awake while studing as the alarm will wake them up whenever they feel drowsy allowing them to continue their studies without any tension of drowsing off.
     
+### Few Code snippets:
+* To get face landmarks-
+```sh
+detector = dlib.get_frontal_face_detector()
+predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+
+def detect_shape(self, gray, rect, predictor):
+   shape = predictor(gray, rect)
+   shape = face_utils.shape_to_np(shape)
+   return shape
+   
+shape = obj.detect_shape(gray, rect, predictor)
+```
+* To calculate euclidean distance-
+```sh
+def calculate_ratio(eye):
+    A = d.euclidean(eye[1], eye[5])
+    B = d.euclidean(eye[2], eye[4])
+    C = d.euclidean(eye[0], eye[3])
+    ratio = (A + B) / (2.0 * C)
+    return ratio
+```
         
 * GitHub repo link: [Binary-Beasts](https://github.com/Bhumika-Kothwal/Binary-Beasts)
 * Drive link: [Drive link here](https://drive.google.com/)
+* PPT link: [PPT](https://drive.google.com/file/d/1n-L9uN4DDPfTTh291vH9bNkmTggglGgY/view?usp=sharing)
     
         
 ## Technology stack
