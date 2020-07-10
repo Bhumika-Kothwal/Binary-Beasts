@@ -72,6 +72,7 @@ $ python webapp.py
 ## File Structure   
 ```sh
     .  
+    ├── screenshots                         # contains screenshot of the project
     ├── fonts 
     ├── img 
     ├── mail 
@@ -109,7 +110,6 @@ $ python webapp.py
     
         
 ## Screenshots
-Add a few screenshots here to give the viewer a quick idea of what your project looks like. After all, a picture speaks a thousand words.
-
-![Screenshot alt text](https://edtimes.in/wp-content/uploads/2018/09/NikeMeme10-640x633.jpg "Here is a screenshot")
+To be awake is to be alive!!
+![Screenshot](https://github.com/Bhumika-Kothwal/Binary-Beasts/blob/master/screenshots/drowsiness.jpeg)
         
