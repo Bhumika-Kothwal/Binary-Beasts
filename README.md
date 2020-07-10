@@ -66,7 +66,7 @@ $ python webapp.py
 ```
 > Go to the link which shows on terminal.   
     
-> Click [here]() to understand how to go about with the web-app.  
+> Click [here](https://youtu.be/ZoMORe_yvnk) to understand how to go about with the web-app.  
     
         
 ## File Structure   
