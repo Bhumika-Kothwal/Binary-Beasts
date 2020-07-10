@@ -28,9 +28,9 @@
         
 ## Description
 > This Project is a combination of computer vision , front-end and back-end development . In this with the help of a web camera a continous image (known as video) 
-is taken as input and with the of some  eucledian mathematics , algorithims , inbuilt packages and models of python , if the user is found to be sleepy/drowsy an alarm beeps making the user aware of conditions so that proper care can be taken of his/her sleepy situation. 
+is taken as input and with the help of some  eucledian mathematics , algorithims , inbuilt packages and models of python , if the user is found to be sleepy/drowsy an alarm beeps making the user aware of conditions so that proper care can be taken of his/her sleepy situation. 
 
-> It has an accuracy of approximately 95% and a reaction time of less than 1 second making it more efficient for using it.    
+> It has an accuracy of approximately 95% and a reaction time of less than 1 second making it efficient.    
 
 > It can also be used by students to keep themselves awake while studing as the alarm will wake them up whenever they feel drowsy allowing them to continue their studies without any tension of drowsing off.
     
@@ -95,9 +95,9 @@ $ python webapp.py
     
         
 ## Applications
-> It can be used to detect if a driver is drowsy or not during driving and plays alarm if the driver is drowsy resulting in preventing any accidents in near future.  
+> It can be used to detect if a driver is drowsy or not during driving and plays alarm if the driver is drowsy resulting in prevention of accidents.  
   
-> It can also be used by students to keep themselves awake while studing as the alarm will wake them up whenever they feel drowsy allowing them to continue their studies without any tension of drowsing off.
+> It can also be used by students to keep themselves awake while studying as the alarm will wake them up whenever they feel drowsy allowing them to continue their studies without any tension of drowsing off.
     
         
 ## Future scope
