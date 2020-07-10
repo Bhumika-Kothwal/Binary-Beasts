@@ -14,11 +14,10 @@
 * Saif Kazi
 
 ## Description
-This Project is a combination of computer vision , front-end and back-end development . In this with the help of a web camera a continous image (known as video)
-is taken as input and with the of some  eucledian mathematics , algorithims , inbuilt packages and models of python , if the user is found to be sleepy/drowsy an alarm beeps making the user aware of conditions so that proper care can be taken of his sleepy situation.
+Add your project description here. Your project description should cover how your website/app works. That way you can convey what your project is without the need for anyone to view the code. A more detailed readme in your project repository is encouraged, which can include build and use instructions etc.
 
+* Use bullet points for any feature descriptions you may want to add
 
-* It has an accuracy of approximately 95% and a reaction time of less than 1 second making it more efficient for using it .
 ```bash
     Add appropriate code snippets here (4 spaces indent)
 ```
@@ -27,7 +26,7 @@ Don't forget to replace the link here with **_your own Github repository_** link
 
 Along with this, add the link of the drive folder that contains the app APK/Screenshots/Screen Recordings. If you have hosted your project on the web, add that link as well.
 
-* GitHub repo link:https://github.com/Bhumika-Kothwal/Binary-Beasts
+* GitHub repo link: [Link to repository](https://github.com/your-repo-link)
 * Drive link: [Drive link here](https://drive.google.com/)
 * Website link: [Website link here](www.google.com)
 
@@ -72,12 +71,10 @@ The file structure is as follows -
   
 > It can also be used by students to keep themselves awake while studing as the alarm will wake them up whenever they feel drowsy allowing them to continue their studies without any tension of drowsing off.
 
-
 ## Future scope
 > The project now uses the web-cam to capture the images of driver to process upon. Further work includes -
 - [ ] Providing feature to capture images using Raspberry-Pi or other external camera
 - [ ] Building this model into a hardware which can be directly fixed onto a place
-- [ ] Making this into a web-application and can be used by any external server as well
 
 ## Screenshots
 Add a few screenshots here to give the viewer a quick idea of what your project looks like. After all, a picture speaks a thousand words.
