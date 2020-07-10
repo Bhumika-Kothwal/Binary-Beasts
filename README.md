@@ -27,12 +27,12 @@
     
         
 ## Description
-This Project is a combination of computer vision , front-end and back-end development . In this with the help of a web camera a continous image (known as video) 
+> This Project is a combination of computer vision , front-end and back-end development . In this with the help of a web camera a continous image (known as video) 
 is taken as input and with the of some  eucledian mathematics , algorithims , inbuilt packages and models of python , if the user is found to be sleepy/drowsy an alarm beeps making the user aware of conditions so that proper care can be taken of his/her sleepy situation. 
 
-It has an accuracy of approximately 95% and a reaction time of less than 1 second making it more efficient for using it.    
+> It has an accuracy of approximately 95% and a reaction time of less than 1 second making it more efficient for using it.    
 
-It can also be used by students to keep themselves awake while studing as the alarm will wake them up whenever they feel drowsy allowing them to continue their studies without any tension of drowsing off.
+> It can also be used by students to keep themselves awake while studing as the alarm will wake them up whenever they feel drowsy allowing them to continue their studies without any tension of drowsing off.
     
         
 * GitHub repo link: [Binary-Beasts](https://github.com/Bhumika-Kothwal/Binary-Beasts)
@@ -41,14 +41,14 @@ It can also be used by students to keep themselves awake while studing as the al
         
 ## Technology stack
 
-Tools and technologies that you learnt and used in the project.
+> Tools and technologies that you learnt and used in the project.
 
-1. Python
-2. Machine Learning
-3. OpenCV
-4. Javascript
-5. HTML
-6. CSS (basic)
+> 1. Python
+> 2. Machine Learning
+> 3. OpenCV
+> 4. Javascript
+> 5. HTML
+> 6. CSS (basic)
     
         
 ## Project Setup
@@ -56,17 +56,17 @@ Tools and technologies that you learnt and used in the project.
     
         
 ## Usage
-* Clone the repo
+> Clone the repo
 ```sh
 $ git clone https://github.com/Bhumika-Kothwal/Binary-Beasts.git
 ``` 
-* Run the webapp.py file using the command -
+> Run the webapp.py file using the command -
 ```sh
 $ python webapp.py
 ```
-* Go to the link which shows on terminal.   
+> Go to the link which shows on terminal.   
     
-Click [here]() to understand how to go about with the web-app.  
+> Click [here]() to understand how to go about with the web-app.  
     
         
 ## File Structure   
