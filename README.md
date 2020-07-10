@@ -16,19 +16,8 @@
 ## Description
 Add your project description here. Your project description should cover how your website/app works. That way you can convey what your project is without the need for anyone to view the code. A more detailed readme in your project repository is encouraged, which can include build and use instructions etc.
 
-* Use bullet points for any feature descriptions you may want to add
-
-```bash
-    Add appropriate code snippets here (4 spaces indent)
-```
-
-Don't forget to replace the link here with **_your own Github repository_** link.
-
-Along with this, add the link of the drive folder that contains the app APK/Screenshots/Screen Recordings. If you have hosted your project on the web, add that link as well.
-
 * GitHub repo link: [Link to repository](https://github.com/your-repo-link)
 * Drive link: [Drive link here](https://drive.google.com/)
-* Website link: [Website link here](www.google.com)
 
 ## Technology stack
 
@@ -36,7 +25,7 @@ Tools and technologies that you learnt and used in the project.
 
 1. Python
 2. Machine Learning
-3. Flask-SocketIO
+3. OpenCV
 4. Javascript
 5. HTML
 6. CSS (basic)
@@ -45,24 +34,40 @@ Tools and technologies that you learnt and used in the project.
 > See [SETUP.md](https://github.com/Bhumika-Kothwal/Binary-Beasts/blob/master/SETUP.md) for the installation steps.
 
 ## Usage
-Clone the repo
+* Clone the repo
 ```sh
-git clone https://github.com/Bhumika-Kothwal/Binary-Beasts.git
+$ git clone https://github.com/Bhumika-Kothwal/Binary-Beasts.git
 ``` 
-  
-The file structure is as follows -   
+* Run the webapp.py file using the command -
 ```sh
-    Drowsiness detection app  
+$ python webapp.py
+```
+* Go to the link which shows on terminal.   
+    
+Click [here]() to understand how to go about with the web-app.  
+
+## File Structure   
+```sh
+    .  
+    ├── fonts 
+    ├── img 
+    ├── mail 
+    ├── alarm.wav                           # alarm file
+    ├── shape_predictor_68_face_landmarks   # dlib classifier to detect facial landmarks
     ├── static                   
-    │   ├── js                            # contains .js files    
-    │   ├── models                        # contains face detection and face landmark detection models      
-    │   └── styles                        # contains CSS files for HTML page styling          
-    ├── templates                         # conatins HTML pages     
-    │   └── index.html                    # app page
-    ├── python_code                       # conatins python code    
-    │   ├── drowsiness_detection.py       # python code for drowsiness detection
-    │   └── __init_.py        
-    └── app.py                            # conatins server-side Flask-SocketIO code   
+    │   ├── js                              # contains .js files    
+    │   ├── styles                          # contains .css files       
+    │   └── demo.mp4                        # contains demo of our project          
+    ├── templates                           # conatins HTML pages  
+    │   ├── demo.html                       # contains demo video
+    │   ├── start.html                      # live drowsiness detection page
+    │   └── index.html                      # home page
+    ├── drowsiness_detection                # conatins python code    
+    │   ├── eye_yawn_detection              # python code for drowsiness detection
+    │   └── __init_.py       
+    ├── webapp.py                           # conatins server-side Flask code   
+    ├── SETUP.md                            # contains installation instructions of different modules
+    └── README.md                          
 ``` 
 
 
