@@ -58,8 +58,8 @@ def calculate_ratio(eye):
 ```
         
 * GitHub repo link: [Binary-Beasts](https://github.com/Bhumika-Kothwal/Binary-Beasts)
-* Drive link: [Drive link here](https://drive.google.com/)
-* PPT link: [PPT](https://drive.google.com/file/d/1n-L9uN4DDPfTTh291vH9bNkmTggglGgY/view?usp=sharing)
+* Drive link: [Drive link here](https://drive.google.com/file/d/1pNlAQ5A9hHEadjPHQfkUHDSAqiPhLpKC/view?usp=drivesdk)
+* PPT link: [PPT link here](https://drive.google.com/file/d/1n-L9uN4DDPfTTh291vH9bNkmTggglGgY/view?usp=sharing)
     
         
 ## Technology stack
